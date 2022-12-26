@@ -1,4 +1,4 @@
-package com.example.paul.integration;
+package com.example.karnika.integration;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

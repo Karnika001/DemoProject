@@ -1,4 +1,4 @@
-package com.example.paul.unit;
+package com.example.karnika.unit;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

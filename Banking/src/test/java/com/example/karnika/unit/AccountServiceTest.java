@@ -1,4 +1,4 @@
-package com.example.paul.unit;
+package com.example.karnika.unit;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
