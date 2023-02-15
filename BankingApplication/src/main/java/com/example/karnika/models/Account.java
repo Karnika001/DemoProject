@@ -16,7 +16,7 @@ public class Account {
     @Id @GeneratedValue
     private long id;
 
-    private String sortCode;
+    private String passCode;
 
     private String accountNumber;
 
@@ -24,34 +24,34 @@ public class Account {
 
     private String bankName;
 
-    private String ownerName;
+    private String userName;
 
     private transient List<Transaction> transactions;
 
     protected Account() {}
-    public Account(String bankName, String ownerName, String generateSortCode, String generateAccountNumber, double currentBalance) {
-        this.sortCode = generateSortCode;
+    public Account(String bankName, String userName, String generateSortCode, String generateAccountNumber, double currentBalance) {
+        this.passCode = generateSortCode;
         this.accountNumber = generateAccountNumber;
         this.currentBalance = currentBalance;
         this.bankName = bankName;
-        this.ownerName = ownerName;
+        this.userName = userName;
     }
-    public Account(long id, String sortCode, String accountNumber, double currentBalance, String bankName, String ownerName) {
+    public Account(long id, String sortCode, String accountNumber, double currentBalance, String bankName, String userName) {
         this.id = id;
-        this.sortCode = sortCode;
+        this.passCode = sortCode;
         this.accountNumber = accountNumber;
         this.currentBalance = currentBalance;
         this.bankName = bankName;
-        this.ownerName = ownerName;
+        this.userName = userName;
     }
 
-    public Account(long id, String sortCode, String accountNumber, double currentBalance, String bankName, String ownerName, List<Transaction> transactions) {
+    public Account(long id, String sortCode, String accountNumber, double currentBalance, String bankName, String userName, List<Transaction> transactions) {
         this.id = id;
-        this.sortCode = sortCode;
+        this.passCode = sortCode;
         this.accountNumber = accountNumber;
         this.currentBalance = currentBalance;
         this.bankName = bankName;
-        this.ownerName = ownerName;
+        this.userName = userName;
         this.transactions = transactions;
     }
 
@@ -61,11 +61,11 @@ public class Account {
     public void setId(long id) {
         this.id = id;
     }
-    public String getSortCode() {
-        return sortCode;
+    public String getPassCode() {
+        return passCode;
     }
-    public void setSortCode(String sortCode) {
-        this.sortCode = sortCode;
+    public void setPassCode(String sortCode) {
+        this.passCode = sortCode;
     }
     public String getAccountNumber() {
         return accountNumber;
@@ -79,11 +79,11 @@ public class Account {
     public void setCurrentBalance(double currentBalance) {
         this.currentBalance = currentBalance;
     }
-    public String getOwnerName() {
-        return ownerName;
+    public String getuserName() {
+        return userName;
     }
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
+    public void setuserName(String userName) {
+        this.userName = userName;
     }
     public String getBankName() {
         return bankName;
@@ -102,11 +102,11 @@ public class Account {
     public String toString() {
         return "Account{" +
                 "id=" + id +
-                ", sortCode='" + sortCode + '\'' +
+                ", passCode='" + passCode + '\'' +
                 ", accountNumber='" + accountNumber + '\'' +
                 ", currentBalance=" + currentBalance +
                 ", bankName='" + bankName + '\'' +
-                ", ownerName='" + ownerName + '\'' +
+                ", userName='" + userName + '\'' +
                 '}';
     }
 }

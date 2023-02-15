@@ -23,15 +23,15 @@ public class TransactionService {
 
     public boolean makeTransfer(TransactionInput transactionInput) {
         // TODO refactor synchronous implementation with messaging queue
-        String sourceSortCode = transactionInput.getSourceAccount().getSortCode();
+        String sourcepassCode = transactionInput.getSourceAccount().getpassCode();
         String sourceAccountNumber = transactionInput.getSourceAccount().getAccountNumber();
         Optional<Account> sourceAccount = accountRepository
-                .findBySortCodeAndAccountNumber(sourceSortCode, sourceAccountNumber);
+                .findBypassCodeAndAccountNumber(sourcepassCode, sourceAccountNumber);
 
-        String targetSortCode = transactionInput.getTargetAccount().getSortCode();
+        String targetpassCode = transactionInput.getTargetAccount().getpassCode();
         String targetAccountNumber = transactionInput.getTargetAccount().getAccountNumber();
         Optional<Account> targetAccount = accountRepository
-                .findBySortCodeAndAccountNumber(targetSortCode, targetAccountNumber);
+                .findBypassCodeAndAccountNumber(targetpassCode, targetAccountNumber);
 
         if (sourceAccount.isPresent() && targetAccount.isPresent()) {
             if (isAmountAvailable(transactionInput.getAmount(), sourceAccount.get().getCurrentBalance())) {
@@ -40,7 +40,7 @@ public class TransactionService {
                 transaction.setAmount(transactionInput.getAmount());
                 transaction.setSourceAccountId(sourceAccount.get().getId());
                 transaction.setTargetAccountId(targetAccount.get().getId());
-                transaction.setTargetOwnerName(targetAccount.get().getOwnerName());
+                transaction.setTargetuserName(targetAccount.get().getuserName());
                 transaction.setInitiationDate(LocalDateTime.now());
                 transaction.setCompletionDate(LocalDateTime.now());
                 transaction.setReference(transactionInput.getReference());

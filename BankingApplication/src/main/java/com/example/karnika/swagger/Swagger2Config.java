@@ -16,6 +16,6 @@ public class Swagger2Config {
 
 	@Bean
 	public Docket swaggerConfig() {
-		return new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.ant("/api/v1/*")).build().apiInfo(new ApiInfo("Banking Api","Online Banking Api","1.0","http://localhost:8050/h2-console",new Contact("name","url","karnikathilagar001@gmail.com"),"opensource","http://aihshew-e-mentoring.rf.gd",Collections.emptyList()));
+		return new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.ant("/api/v1/*")).build().apiInfo(new ApiInfo("Banking Api","Online Banking Api","1.0","http://localhost:8050/h2-console",new Contact("Karnika","https://github.com/Karnika001","karnikathilagar001@gmail.com"),"opensource","https://github.com/Karnika001",Collections.emptyList()));
 	}
 }

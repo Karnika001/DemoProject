@@ -6,18 +6,18 @@ import java.util.Objects;
 public class AccountInput {
 
     @NotBlank(message = "Sort code is mandatory")
-    private String sortCode;
+    private String passCode;
 
     @NotBlank(message = "Account number is mandatory")
     private String accountNumber;
 
     public AccountInput() {}
 
-    public String getSortCode() {
-        return sortCode;
+    public String getpassCode() {
+        return passCode;
     }
-    public void setSortCode(String sortCode) {
-        this.sortCode = sortCode;
+    public void setpassCode(String passCode) {
+        this.passCode = passCode;
     }
     public String getAccountNumber() {
         return accountNumber;
@@ -29,7 +29,7 @@ public class AccountInput {
     @Override
     public String toString() {
         return "AccountInput{" +
-                "sortCode='" + sortCode + '\'' +
+                "passCode='" + passCode + '\'' +
                 ", accountNumber='" + accountNumber + '\'' +
                 '}';
     }
@@ -39,12 +39,12 @@ public class AccountInput {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AccountInput that = (AccountInput) o;
-        return Objects.equals(sortCode, that.sortCode) &&
+        return Objects.equals(passCode, that.passCode) &&
                 Objects.equals(accountNumber, that.accountNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sortCode, accountNumber);
+        return Objects.hash(passCode, accountNumber);
     }
 }

@@ -47,20 +47,20 @@ class TransactionServiceTest {
         var sourceAccount = new Account(1L, "53-68-92", "78901234", 458.1, "Some Bank", "John");
         var targetAccount = new Account(2L, "67-41-18", "48573590", 64.9, "Some Other Bank", "Major");
 
-        when(accountRepository.findBySortCodeAndAccountNumber("53-68-92", "78901234"))
+        when(accountRepository.findBypassCodeAndAccountNumber("53-68-92", "78901234"))
                 .thenReturn(Optional.of(sourceAccount));
-        when(accountRepository.findBySortCodeAndAccountNumber("67-41-18", "48573590"))
+        when(accountRepository.findBypassCodeAndAccountNumber("67-41-18", "48573590"))
                 .thenReturn(Optional.of(targetAccount));
     }
 
     @Test
     void whenTransactionDetails_thenTransferShouldBeDenied() {
         var sourceAccount = new AccountInput();
-        sourceAccount.setSortCode("53-68-92");
+        sourceAccount.setpassCode("53-68-92");
         sourceAccount.setAccountNumber("78901234");
 
         var targetAccount = new AccountInput();
-        targetAccount.setSortCode("67-41-18");
+        targetAccount.setpassCode("67-41-18");
         targetAccount.setAccountNumber("48573590");
 
         var input = new TransactionInput();
@@ -77,11 +77,11 @@ class TransactionServiceTest {
     @Test
     void whenTransactionDetailsAndAmountTooLarge_thenTransferShouldBeDenied() {
         var sourceAccount = new AccountInput();
-        sourceAccount.setSortCode("53-68-92");
+        sourceAccount.setpassCode("53-68-92");
         sourceAccount.setAccountNumber("78901234");
 
         var targetAccount = new AccountInput();
-        targetAccount.setSortCode("67-41-18");
+        targetAccount.setpassCode("67-41-18");
         targetAccount.setAccountNumber("48573590");
 
         var input = new TransactionInput();

@@ -9,7 +9,7 @@ public class CreateAccountInput {
     private String bankName;
 
     @NotBlank(message = "Owner name is mandatory")
-    private String ownerName;
+    private String userName;
 
 
     public CreateAccountInput() {}
@@ -22,19 +22,19 @@ public class CreateAccountInput {
         this.bankName = bankName;
     }
 
-    public String getOwnerName() {
-        return ownerName;
+    public String getuserName() {
+        return userName;
     }
 
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
+    public void setuserName(String userName) {
+        this.userName = userName;
     }
 
     @Override
     public String toString() {
         return "CreateAccountInput{" +
                 "bankName='" + bankName + '\'' +
-                ", ownerName='" + ownerName + '\'' +
+                ", userName='" + userName + '\'' +
                 '}';
     }
 
@@ -44,11 +44,11 @@ public class CreateAccountInput {
         if (o == null || getClass() != o.getClass()) return false;
         CreateAccountInput that = (CreateAccountInput) o;
         return Objects.equals(bankName, that.bankName) &&
-                Objects.equals(ownerName, that.ownerName);
+                Objects.equals(userName, that.userName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bankName, ownerName);
+        return Objects.hash(bankName, userName);
     }
 }

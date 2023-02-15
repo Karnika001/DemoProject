@@ -19,7 +19,7 @@ public class Transaction {
 
     private long targetAccountId;
 
-    private String targetOwnerName;
+    private String targetuserName;
 
     private double amount;
 
@@ -53,11 +53,11 @@ public class Transaction {
     public void setTargetAccountId(long targetAccountId) {
         this.targetAccountId = targetAccountId;
     }
-    public String getTargetOwnerName() {
-        return targetOwnerName;
+    public String getTargetuserName() {
+        return targetuserName;
     }
-    public void setTargetOwnerName(String targetOwnerName) {
-        this.targetOwnerName = targetOwnerName;
+    public void setTargetuserName(String targetuserName) {
+        this.targetuserName = targetuserName;
     }
     public double getAmount() {
         return amount;
@@ -101,7 +101,7 @@ public class Transaction {
         return "Transaction{" +
                 "sourceAccountId=" + sourceAccountId +
                 ", targetAccountId=" + targetAccountId +
-                ", targetOwnerName='" + targetOwnerName + '\'' +
+                ", targetuserName='" + targetuserName + '\'' +
                 ", amount=" + amount +
                 ", initiationDate=" + initiationDate +
                 ", completionDate=" + completionDate +

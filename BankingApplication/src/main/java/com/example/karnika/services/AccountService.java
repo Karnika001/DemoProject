@@ -23,9 +23,9 @@ public class AccountService  implements AccountServiceInterface {
 	}
 
 	@Override
-	public Account getAccount(String sortCode, String accountNumber) {
+	public Account getAccount(String passCode, String accountNumber) {
 		Optional<Account> account = accountRepository
-                .findBySortCodeAndAccountNumber(sortCode, accountNumber);
+                .findBypassCodeAndAccountNumber(passCode, accountNumber);
 
         account.ifPresent(value ->
                 value.setTransactions(transactionRepository
@@ -45,7 +45,7 @@ public class AccountService  implements AccountServiceInterface {
 	@Override
 	public Account createAccount(String bankName, String ownerName) {
 		CodeGenerator codeGenerator = new CodeGenerator();
-        Account newAccount = new Account(bankName, ownerName, codeGenerator.generateSortCode(), codeGenerator.generateAccountNumber(), 0.00);
+        Account newAccount = new Account(bankName, ownerName, codeGenerator.generatepassCode(), codeGenerator.generateAccountNumber(), 0.00);
         return accountRepository.save(newAccount);
 	}
 

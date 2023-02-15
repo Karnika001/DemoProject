@@ -22,7 +22,7 @@ class CheckBalanceIntegrationTest {
     void givenAccountDetails_whenCheckingBalance_thenVerifyAccountCorrect() {
         // given
         var input = new AccountInput();
-        input.setSortCode("53-68-92");
+        input.setpassCode("53-68-92");
         input.setAccountNumber("73084635");
 
         // when
@@ -31,8 +31,8 @@ class CheckBalanceIntegrationTest {
         // then
         var account = (Account) body;
         assertThat(account).isNotNull();
-        assertThat(account.getOwnerName()).isEqualTo("Paul Dragoslav");
-        assertThat(account.getSortCode()).isEqualTo("53-68-92");
+        assertThat(account.getuserName()).isEqualTo("Paul Dragoslav");
+        assertThat(account.getPassCode()).isEqualTo("53-68-92");
         assertThat(account.getAccountNumber()).isEqualTo("73084635");
     }
 }
